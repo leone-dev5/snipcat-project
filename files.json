@@ -1,0 +1,38 @@
+{
+  "name": "CatSeed",
+  "version": "0.0.1_prototype",
+  
+  "config": {
+    "debug": true,
+    "stopOnError": false,
+    "retry": 10,
+    "timeout": 3000
+  },
+  
+"files": [
+    { "type": "css", "path": "src/assets/cat-seed/iu/layout/canva-layout/canva.css", "retry": 3 },
+    { "type": "css", "path": "src/assets/cat-seed/iu/overlay/overlay-menu/submenu.css", "retry": 3 },
+    { "type": "css", "path": "src/assets/cat-seed/iu/layout/toolbars/toolbars.css" },
+    { "type": "css", "path": "src/assets/cat-seed/iu/box-icons/style-change.css" },
+    { "type": "css", "path": "src/assets/cat-seed/iu/box-icons/box.css" },
+    { "type": "css", "path": "src/assets/cat-seed/iu/box-icons/style-change.css" },
+    { "type": "css", "path": "src/assets/cat-seed/iu/layout/buttons/buttons.css" },
+    { "type": "css", "path": "src/assets/libs/font-aweson/css/all.css" },
+    
+    { "type": "js", "path": "src/assets/cat-seed/iu/layout/canva-layout/layers-manager/internal-layers.js" },
+    { "type": "js", "path": "src/assets/cat-seed/iu/layout/canva-layout/size/size.js" },
+    { "type": "js", "path": "src/assets/cat-seed/iu/layout/canva-layout/size/border.js" },
+    { "type": "js", "path": "src/assets/cat-seed/iu/layout/canva-layout/screen.js" },
+    { "type": "js", "path": "src/assets/cat-seed/iu/overlay/overlay-menu/submenu.js" },
+    { "type": "js", "path": "/src/assets/cat-seed/iu/layout/canva-layout/layers-manager/remove.js" },
+    { "type": "js", "path": "src/assets/cat-seed/iu/tools/crop-tools/crop.js" },
+    { "type": "js", "path": "public/developer.js" },
+    { "type": "js", "path": "src/assets/cat-seed/iu/tools/forms-tools/forms-tools.js" },
+    { "type": "js", "path": "src/assets/cat-seed/iu/tools/dropper-tools/dropper.js" },
+    { "type": "js", "path": "src/assets/cat-seed/iu/tools/erase-tools/eraser/pen-eraser.js" },
+    { "type": "js", "path": "src/assets/cat-seed/iu/tools/painting-tools/picker-colors/colors-change.js" },
+    { "type": "js", "path": "src/assets/cat-seed/iu/tools/hand-tools/hand.js" },
+    { "type": "js", "path": "/src/assets/cat-seed/iu/layout/canva-layout/layers-manager/Infos.js" }
+    
+  ]
+}

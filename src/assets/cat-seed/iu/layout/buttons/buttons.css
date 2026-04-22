@@ -1,0 +1,68 @@
+.tool-btn-right{
+  position: relative;
+  width: 100%;
+  height: 3rem;
+  background: none;
+  
+}
+button{
+  border: none;
+}
+.tool-btn {
+  width: 100%;
+  height: 3rem;
+  color: white;
+  background: rgba(81, 81, 82, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.tool-btn:houver, 
+.bar_choose {
+  display: block;
+}
+
+.tool-btn::-webkit-scrollbar {
+  display: none;
+}
+
+.sub-menu {
+  display: none;
+}
+
+.tool-btn[data-selected="true"] {
+  filter: brightness(80%);
+}
+.tools {
+  position: absolute;
+  height: 1.2rem;
+  top: 0;
+}
+.btn-top {
+  position: relative;
+  height: 100%;
+  width: 6rem;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 2px 8px;
+  display: flex;
+}
+
+.tools::-webkit-scrollbar {
+  display: none;
+}
+
+.tools{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  user-select: none;
+  color: white;
+  scrollbar-width: none;
+  white-space: nowrap;
+  overflow-x: auto;
+}

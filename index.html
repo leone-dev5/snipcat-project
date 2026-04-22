@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link rel="stylesheet" href="./src/assets/libs/font-aweson/css/all.css">
+    
+    <link rel="stylesheet" href="./src/assets/cat-seed/iu/layout/toolbars/toolbars.css">
+    
+    <link rel="stylesheet" href="./src/assets/cat-seed/iu/layout/canva-layout/canva.css">
+    
+    <title>Snipcat</title>
+</head>
+
+<body>
+    <div id="root">
+        <div class="toolbar-top">
+            <div class="tools">
+                <!-- Menu Arquivos -->
+                
+                <div id="archives" class="btn-top">
+                    <i class="fas fa-folder-open"></i>Arquivos
+                </div>
+                <div class="context-menu-top">
+                    <ul>
+                        <li><i class="fas fa-file"></i>Novo</li>
+                        <li id="matters" |><i class="fas fa-folder-open"></i>Importar</li>
+                        <li><i class="fas fa-share-alt"></i>Compartilhar</li>
+                        <li id="save-button"><i class="fas fa-save"></i>Salvar</li>
+                        <li><i class="fas fa-save"></i>Salvar Como</li>
+                        <li><i class="fas fa-file-export"></i>Exportar</li>
+                        
+                        <li><i class="fas fa-info-circle"></i>Informações do Arquivo</li>
+                    </ul>
+                </div>
+                
+                <!-- Menu Editar -->
+                <div id="edit" class="btn-top">
+                    <i class="fas fa-edit"></i>Editar
+                </div>
+                <div class="context-menu-top">
+                    <ul>
+                        
+                        <li onclick="layerAllRemove()"><i class="fas fa-history"></i>Desfazer Tudo</li>
+                        <li onclick="layerLastRedo()"><i class="fas fa-redo"></i>Refazer</li>
+                        
+                        <li onclick="layerLastRemove()"><i class="fas fa-undo"></i>Desfazer</li>
+                        
+                        <li><i class="fas fa-feather"></i>Amenizar</li>
+                        <li><i class="fas fa-cut"></i>Cortar</li>
+                        <li><i class="fas fa-copy"></i>Copiar</li>
+                        <li><i class="fas fa-clone"></i>Copiar Mesclado</li>
+                        <li><i class="fas fa-paste"></i>Colar</li>
+                        <li><i class="fas fa-eraser"></i>Limpar</li>
+                        <li><i class="fas fa-fill-drip"></i>Preencher</li>
+                        <li><i class="fas fa-vector-square"></i>Traça Demarcador</li>
+                        <li><i class="fas fa-expand-alt"></i>Escala Sensível a Conteúdo</li>
+                        <li><i class="fas fa-user"></i>Distorção de Marionete</li>
+                        <li><i class="fas fa-cube"></i>Distorção de Perspectiva</li>
+                        <li><i class="fas fa-arrows-alt"></i>Transformação Livre</li>
+                        <li><i class="fas fa-sync-alt"></i>Transformar</li>
+                        <li><i class="fas fa-align-center"></i>Alinhar Automaticamente</li>
+                    </ul>
+                </div>
+                
+                <!-- Menu Imagem -->
+                <div id="images" class="btn-top">
+                    <i class="fas fa-image"></i>Imagem
+                </div>
+                <div class="context-menu-top">
+                    <ul>
+                        <li><i class="fas fa-cog"></i>Modo</li>
+                        <li><i class="fas fa-sliders-h"></i>Ajustes</li>
+                        <li><i class="fas fa-magic"></i>Tom Automático</li>
+                        <li><i class="fas fa-adjust"></i>Contraste Automático</li>
+                        <li><i class="fas fa-palette"></i>Cor Automático</li>
+                        <li><i class="fas fa-tint"></i>Reduzir Cores</li>
+                        <li><i class="fas fa-vector-square"></i>Vetorizar Bitmap</li>
+                        <li><i class="fas fa-wave-square"></i>Wavelet Decompose</li>
+                        <li><i class="fas fa-crop-alt"></i>Tamanho de Tela</li>
+                        <li><i class="fas fa-expand-arrows-alt"></i>Tamanho de Imagem</li>
+                        <li><i class="fas fa-sync-alt"></i>Transformar</li>
+                        <li><i class="fas fa-crop-alt"></i>Cortar</li>
+                        <li><i class="fas fa-cut"></i>Aparar</li>
+                        <li><i class="fas fa-eye"></i>Mostrar Tudo</li>
+                        <li><i class="fas fa-copy"></i>Duplicar</li>
+                        <li><i class="fas fa-images"></i>Aplicar Imagem</li>
+                        <li><i class="fas fa-code-branch"></i>Variáveis</li>
+                    </ul>
+                </div>
+                
+                <!-- Menu Camada -->
+                <div id="layer" class="btn-top">
+                    <i class="fas fa-layer-group"></i>Camada
+                </div>
+                <div class="context-menu-top">
+                    <ul>
+                        <li><i class="fas fa-plus"></i>Novo</li>
+                        <li><i class="fas fa-copy"></i>Duplicatas de camada</li>
+                        <li><i class="fas fa-clone"></i>Duplicar em</li>
+                        <li><i class="fas fa-trash"></i>Deletar</li>
+                        <li><i class="fas fa-font"></i>Texto</li>
+                        <li><i class="fas fa-paint-brush"></i>Estilo de Camada</li>
+                        <li><i class="fas fa-fill"></i>Nova Camada de preenchimento</li>
+                        <li><i class="fas fa-layer-group"></i>Nova Camara</li>
+                    </ul>
+                </div>
+                
+                <!-- Menu Selecionar -->
+                <div id="seletor" class="btn-top">
+                    <i class="fas fa-mouse-pointer"></i>Selecionar
+                </div>
+                <div class="context-menu-top">
+                    <ul>
+                        <li><i class="fas fa-vector-square"></i>Tudo</li>
+                        <li><i class="fas fa-times"></i>Desmarcar</li>
+                        <li><i class="fas fa-exchange-alt"></i>Inverso</li>
+                        <li><i class="fas fa-eraser"></i>Remove BG</li>
+                        <li><i class="fas fa-eye-dropper"></i>Intervalo de Cores</li>
+                        <li><i class="fas fa-magic"></i>Varinha Mágica</li>
+                        <li><i class="fas fa-user"></i>Assunto</li>
+                        <li><i class="fas fa-mask"></i>Modo de Máscara Rápido</li>
+                        <li><i class="fas fa-save"></i>Salvar Seleção</li>
+                    </ul>
+                </div>
+                
+                <!-- Menu Filtros -->
+                <div id="filter" class="btn-top">
+                    <i class="fas fa-filter"></i>Filtros
+                </div>
+                <div class="context-menu-top">
+                    <ul>
+                        <li><i class="fas fa-history"></i>Último Filtro</li>
+                        <li><i class="fas fa-images"></i>Galeria de Filtros</li>
+                        <li><i class="fas fa-camera"></i>Correção de lente</li>
+                        <li><i class="fas fa-camera-retro"></i>Camera Raw</li>
+                        <li><i class="fas fa-tint"></i>Dissolver</li>
+                        <li><i class="fas fa-cube"></i>Ponto de Fuga</li>
+                        <li><i class="fas fa-blur"></i>Borrar</li>
+                        <li><i class="fas fa-cube"></i>3D Point</li>
+                        <li><i class="fas fa-compress-alt"></i>Distorcer</li>
+                        <li><i class="fas fa-th-large"></i>Pixelizar</li>
+                        <li><i class="fas fa-bolt"></i>Aguçar</li>
+                        <li><i class="fas fa-paint-brush"></i>Estilizar</li>
+                    </ul>
+                </div>
+                
+                <!-- Menu Visualizar -->
+                <div id="visualize" class="btn-top">
+                    <i class="fas fa-eye"></i>Visualizar
+                </div>
+                <div class="context-menu-top">
+                    <ul>
+                        <li><i class="fas fa-search-plus"></i>Mais Zoom</li>
+                        <li><i class="fas fa-search-minus"></i>Menos Zoom</li>
+                        <li><i class="fas fa-expand"></i>Ajustar Área</li>
+                        <li><i class="fas fa-th"></i>Pixel por Pixel</li>
+                        <li><i class="fas fa-desktop"></i>Visualizar Padrão</li>
+                    </ul>
+                </div>
+                
+                <div id="addicione" class="btn-top">
+                    <i class="fas fa-plus-circle"></i>Adicionais
+                </div>
+                <div class="context-menu-top">
+                    <ul>
+                        <li><i class="fas fa-book"></i>Bibliotecas</li>
+                        
+                        <li id="linker-setting"><i class="fas fa-cog"></i>Configurações</li>
+                        
+                        <li><i class="fas fa-font"></i>Adicionar Fontes</li>
+                        <li><i class="fas fa-bullseye"></i>Modo Foco</li>
+                        <li><i class="fas fa-info-circle"></i>Vector Info</li>
+                        <li><i class="fas fa-question-circle"></i>Ajuda</li>
+                    </ul>
+                </div>
+                
+                <div class="btn-top" id="fullScreen">
+                    Expandir
+                </div>
+                
+            </div>
+            
+            <div class="tools-bottom">
+                
+                <div class="move-info" id="move-info">
+                    
+                    <div class="part">
+                        <span>W:<input type="number" id="counter-widht" class="infos-table"></span>
+                        
+                    </div>
+                    
+                    <div class="part">
+                        <span>H:<input type="number" id="counter-height" class="infos-table"></span>
+                        
+                    </div>
+                    
+                    <div class="part">
+                        <span>X:<input type="number" id="position-x" class="infos-table"></span>
+                    </div>
+                    
+                    <div class="part">
+                        <span>Y:<input type="number" id="position-y" class="infos-table"></span>
+                        
+                    </div>
+                    
+                    <div class="part">
+                        <span>Rotação:<input type="number" id="rotatePos" class="infos-table"></span>
+                        
+                    </div>
+                </div>
+                
+                <div class="crop-info">
+                    
+                </div>
+                
+                <div class="forms-info">
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+        <!-- Barra de ferramentas lateral esquerda -->
+        <div class="toolbar-left">
+            <div class="tool-left">
+                
+                <button class="tool-btn" id="button-active">
+                
+                    <i class="fas fa-arrows-alt"></i>
+                    
+                </button>
+                
+                <div class="context-menu">
+                    <ul>
+                        <li>Mover</li>
+                    </ul>
+                </div>
+                
+                <button class="tool-btn">
+                    <i class="fas fa-vector-square"></i>
+                </button>
+                
+                <div class="context-menu">
+                    <ul>
+                        <li>Seleção</li>
+                    </ul>
+                </div>
+                
+                <button class="tool-btn">
+                    <i class="fas fa-magic"></i>
+                </button>
+                <div class="context-menu">
+                    <ul>
+                        <li>Varinha Mágica</li>
+                    </ul>
+                </div>
+                
+                <button class="tool-btn">
+                    <i class="fas fa-cut"></i>
+                </button>
+                <div class="context-menu">
+                    <ul>
+                        <li>Recortar</li>
+                    </ul>
+                </div>
+                
+                <button class="tool-btn" id="eraser">
+                    <i class="fas fa-eraser"></i>
+                </button>
+                <div class="context-menu">
+                    <ul>
+                        <li>Borracha</li>
+                    </ul>
+                </div>
+                
+                <button class="tool-btn">
+                    <i class="fas fa-fill-drip" id="paint-bucket"></i>
+                </button>
+                <div class="context-menu">
+                    <ul>
+                        <li>Balde de Tinta</li>
+                    </ul>
+                </div>
+                
+                <button class="tool-btn" id="dropper">
+                    <i class="fas fa-eye-dropper"></i>
+                </button>
+                <div class="context-menu">
+                    <ul>
+                        <li>Conta-gotas</li>
+                    </ul>
+                </div>
+                
+                <button class="tool-btn" id="crop-init">
+                    <i class="fas fa-crop-alt"></i>
+                </button>
+                <div class="context-menu">
+                    <ul>
+                        <li>Cortar</li>
+                    </ul>
+                </div>
+                
+                <button class="tool-btn">
+                    <i class="fas fa-circle"></i>
+                </button>
+                <div class="context-menu">
+                    <ul>
+                        <li>Gradiente</li>
+                    </ul>
+                </div>
+                
+                <button class="tool-btn">
+                    <i class="fas fa-eye"></i>
+                </button>
+                <div class="context-menu">
+                    <ul>
+                        <li>Clonar</li>
+                    </ul>
+                </div>
+                
+                <button class="tool-btn" id="forms-create">
+                    <i class="fas fa-shapes"></i>
+                </button>
+                
+                <div class="context-menu">
+                    <ul>
+                        <li>Formas</li>
+                    </ul>
+                </div>
+                
+                <button class="tool-btn">
+                    <i class="fas fa-paint-brush"></i>
+                </button>
+                
+                <div class="context-menu">
+                    <ul>
+                        <li>Pincel</li>
+                    </ul>
+                </div>
+                
+                <button class="tool-btn">
+                    <i class="fas fa-pencil-alt"></i>
+                </button>
+                
+                <div class="context-menu">
+                    <ul>
+                        <li>Lápis</li>
+                    </ul>
+                </div>
+                
+                <button class="tool-btn" id="text-element">
+                    <i class="fas fa-font"></i>
+                </button>
+                
+                <div class="context-menu">
+                    <ul>
+                        <li>Texto</li>
+                    </ul>
+                </div>
+                
+                
+                <button class="tool-btn" id="hand-creative">
+                    <i class="fas fa-hand-paper"></i>
+                </button>
+                <div class="context-menu">
+                    <ul>
+                        <li>Mão</li>
+                    </ul>
+                </div>
+                
+                
+                <button class="tool-btn" id="style-painter">
+                
+                    <div id="painter-black" class="paints">
+                        
+                    </div>
+                    
+                    <div id="painter-white" class="paints">
+                        
+                    </div>
+                    
+                </button>
+                
+                <button class="tool-btn">
+                    <i class="fas fa-mask"></i>
+                </button>
+                
+                <div class="context-menu">
+                    <ul>
+                        <li>Máscara</li>
+                    </ul>
+                </div>
+                
+                <button class="tool-btn">
+                    <i class="fas fa-search-plus"></i>
+                </button>
+                
+            </div>
+        </div>
+        
+        <div class="toolbar-right">
+            <div class="tool-right">
+                
+                <button class="tool-btn-right">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <button class="tool-btn-right">
+                    <i>R</i>
+                </button>
+                
+                <div class="context-menu-right">
+                    <ul>
+                        <li>Régua</li>
+                    </ul>
+                </div>
+                
+                <button class="tool-btn-right">
+                    <i class="fas fa-sun"></i>
+                </button>
+                
+                <div class="context-menu-right">
+                    <ul>
+                        <li>ulop</li>
+                    </ul>
+                </div>
+                
+                
+                <button class="tool-btn-right">
+                    <i style="font-style: italic; font-size: 25px;">f</i>
+                </button>
+                
+                <div class="context-menu-right">
+                    <ul>
+                        <li>ulop</li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="workspace" id="workspace">
+            
+            <div class="box_work" id="box-work">
+                
+                <div class="handle left">
+                    <div class="grip"></div>
+                </div>
+                
+                <div class="handle right">
+                    <div class="grip"></div>
+                </div>
+                
+                <div class="handle top">
+                    <div class="grip"></div>
+                </div>
+                
+                <div class="handle bottom">
+                    <div class="grip"></div>
+                </div>
+                
+                <canvas class="work-image" id="work-image"></canvas>
+                
+                <input id="inputImagem" multiple accept="image/png, image/jpeg, image/webp" style="display: none;" type="file">
+                
+            </div>
+            
+        </div>
+    </div>
+    
+    <script src="./src/initial.js"></script>
+    <script src="./src/css-initial.js"></script>
+    <script src="./public/compatible.js"></script>
+    <script src="./public/full_screen.js"></script>
+    <script src="./src/assets/cat-seed/iu/tools/settings/plug_1.js">
+    </script>
+    
+</body>
+
+</html>

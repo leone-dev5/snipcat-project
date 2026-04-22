@@ -1,0 +1,10 @@
+.box-icon{
+  position: relative;
+  height: 100%;
+  width: 10rem;
+  border: 2px solid white;
+  display: flex;
+}
+i{
+  margin-right: 3px;
+}

@@ -1,0 +1,25 @@
+#style-painter{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+.paints{
+  position: absolute;
+  height: 23px;
+  width: 23px;
+}
+#painter-black{
+  background: black;
+  right: 40%;
+  top: 0;
+}
+#painter-white{
+  background: white;
+  left: 40%;
+  bottom: 15%;
+}
+#painter-white:active{
+  z-index: 2;
+}
