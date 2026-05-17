@@ -32,7 +32,8 @@
     { "type": "js", "path": "src/assets/cat-seed/iu/tools/erase-tools/eraser/pen-eraser.js" },
     { "type": "js", "path": "src/assets/cat-seed/iu/tools/painting-tools/picker-colors/colors-change.js" },
     { "type": "js", "path": "src/assets/cat-seed/iu/tools/hand-tools/hand.js" },
-    { "type": "js", "path": "/src/assets/cat-seed/iu/layout/canva-layout/layers-manager/Infos.js" }
-    
+    { "type": "js", "path": "src/assets/cat-seed/iu/layout/canva-layout/layers-manager/Infos.js" },
+    { "type": "js", "path": "src/assets/libs/key-random/keys.js" },
+     { "type": "js", "path": "src/assets/cat-seed/iu/uploads/upload.js" }
   ]
 }

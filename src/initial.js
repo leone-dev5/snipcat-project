@@ -108,25 +108,3 @@ async function loadFiles() {
   console.info("%cEditor Inicializado!", "color: #00B0FF;");
 }
 loadFiles();
-
-document.getElementById("save-button").addEventListener("click", () => {
-  canvas.toBlob((blob) => {
-    const link = document.createElement("a");
-    
-    const letras = "abcdefghijklmnopqrstuvwxyz"
-    let palavra = ""
-    
-    for (let i = 0; i < 6; i++) {
-       palavra += letras[Math.floor(Math.random() * letras.length)]
-    }
-    
-    
-    link.download = "catseed-views" + palavra + ".png";
-    
-    link.href = URL.createObjectURL(blob);
-    link.click();
-    
-    URL.revokeObjectURL(link.href);
-    
-  }, "image/png");
-});
